@@ -1,0 +1,99 @@
+<div class="card">
+    <div class="toolbar">
+        <!-- Your toolbar content -->
+        <button class="button" (click)="register()">New</button>
+        <input type="text" [(ngModel)]="searchName" placeholder="İsim ara" (input)="searchPerson(searchName)"
+            class="form-control">
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>User Type</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.userName }}</td>
+                <td>{{ user.fullName }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.userType === 0 ? 'User' : 'Admin' }}</td>
+                <td>
+                    <div class="button-group">
+                        
+                        <button class="button button-help" (click)="editUsers(user.id)">Edit</button>
+                        <button class="button button-help" (click)="deleteUsers(user.id)">Delete</button>
+                     
+
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="dialog" *ngIf="UserToEdit">
+    <div class="dialog-header">User Details</div>
+    <div class="dialog-content">
+        <div class="field">
+            <label for="username">User Name</label>
+            <input [(ngModel)]="UserToEdit.userName" type="text" class="form-control item" id="username"
+                placeholder="Username">
+        </div>
+        <div class="field">
+            <label for="email">User Email</label>
+            <input [(ngModel)]="UserToEdit.email" type="text" class="form-control item" id="email" placeholder="Email">
+        </div>
+        <div class="field">
+            <label for="fullName">User FullName</label>
+            <input [(ngModel)]="UserToEdit.fullName" type="text" class="form-control item" id="fullName"
+                placeholder="Full Name">
+        </div>
+    </div>
+    <div class="dialog-footer">
+        <button class="button button-help" (click)="hideDialog()">Close</button>
+        <button class="button button-text" (click)="onUpdate(UserToEdit.id, UserToEdit)">Update</button>
+    </div>
+</div>
+
+
+<div class="dialog modalReg" *ngIf="userAddDialog">
+    <div class="dialog-header">User Add</div>
+    <div class="dialog-content registration-form">
+        <form>
+            <div class="form-icon">
+                <span><i class="fa fa-user-o" style="font-size:48px"></i></span>
+            </div>
+            <div class="form-group">
+                <label for="usernameAddUser">Username</label>
+                <input [(ngModel)]="registerRequest.UserName" type="text" class="form-control item" id="usernameAddUser"
+                    placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="fullNameAddUser">Full Name</label>
+                <input [(ngModel)]="registerRequest.fullName" type="text" class="form-control item" id="fullNameAddUser"
+                    placeholder="Full Name">
+            </div>
+            <div class="form-group">
+                <label for="emailAddUser">Email</label>
+                <input [(ngModel)]="registerRequest.Email" type="text" class="form-control item" id="emailAddUser"
+                    placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="passwordAddUser">Password</label>
+                <input [(ngModel)]="registerRequest.Password" type="password" class="form-control item"
+                    id="passwordAddUser" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button id="addUserBtn" type="button" class="btn btn-block create-account"
+                (click)="userAddDialog = false; register()">Add User</button>
+            </div>
+        </form>
+    </div>
+</div>

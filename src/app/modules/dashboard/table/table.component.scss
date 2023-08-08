@@ -1,0 +1,107 @@
+/* Card styles */
+.card {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th, .table td {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+  }
+  
+  .table th {
+    background-color: #f0f0f0;
+  }
+  
+  /* Button styles */
+  .button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .button-success {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .button-help {
+    background-color: #17a2b8;
+    color: #fff;
+  }
+  
+  .button-warning {
+    background-color: #ffc107;
+    color: #000;
+  }
+  
+  .button-text {
+    background-color: transparent;
+    color: #007BFF;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Dialog styles */
+  .dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dialog-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .dialog-content {
+    margin-bottom: 1rem;
+  }
+  
+  .field {
+    margin-bottom: 1rem;
+  }
+  
+  .field label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .field input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .dialog-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  
+  

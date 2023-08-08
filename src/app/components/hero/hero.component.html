@@ -1,0 +1,67 @@
+<div class="container-xxl py-4">
+
+     <!-- Tweet atma yeri -->
+     <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="card p-3 shadow">
+                <h4 class="mb-3">Tweet at</h4>
+                <form>
+                    <div class="form-group">
+                        <input [(ngModel)]="tweetRequest.userId " [ngModelOptions]="{standalone: true}" type="text" class="form-control item" id="Tweet" placeholder="User Id">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="tweetRequest.userName " [ngModelOptions]="{standalone: true}" type="text" class="form-control item" id="Tweet" placeholder="UserName">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="tweetRequest.TweetLikes " [ngModelOptions]="{standalone: true}" type="text" class="form-control item" id="Tweet" placeholder="TweetLikes">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="tweetRequest.CreatedAt " [ngModelOptions]="{standalone: true}" type="text" class="form-control item" id="Tweet" placeholder="CreatedAt">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="tweetRequest.TweetHeader " [ngModelOptions]="{standalone: true}" type="text" class="form-control item" id="Tweet" placeholder="TweetHeader">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tweetDesc" class="form-label">Tweet</label>
+                        <textarea [(ngModel)]="tweetRequest.TweetDesc" [ngModelOptions]="{standalone: true}" class="form-control" id="tweetDesc" rows="3" ></textarea>
+                    </div>
+                    
+
+                    <button type="button" class="btn btn-primary" (click)="onCreate(tweetRequest)" >Tweet Gönder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /Tweet atma yeri -->
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="mb-5"> <span class="text-primary text-uppercase">Tweets</span></h1>
+        </div>
+        <div class="row g-3">
+            <div class="col-lg-4 col-md-6 wow fadeInUp mt-3" data-wow-delay="0.1s" *ngFor="let tweets of tweets">
+                <div class="room-item shadow rounded overflow-hidden">
+                    <div class="position-relative">
+                        <h1>{{tweets.userName}}</h1>
+                        
+
+                    </div>
+                    <div class="p-4 mt-2">
+                        <div class="d-flex justify-content-between mb-3">
+
+
+                        </div>
+
+                        <p class="text-body mb-3">{{tweets.tweetDesc}}</p>
+                        
+                        <h5 class="mb-0">{{tweets.tweetLikes}} Likes</h5>
+                        <small class="border-end me-3 pe-3">{{tweets.createdAt}}</small>
+                        <button class="btn btn-primary" >Like</button>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

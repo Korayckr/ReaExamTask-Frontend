@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Twitter</a>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                
+            </li>
+
+            <li class="nav-item mx-1">
+                <a class="dropdown-item" routerLink="/profile">Profile</a>
+                  
+
+             
+            </li>
+
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-1">
+                <a class="nav-link" href="/login">
+                    <i *ngIf="!isLoggedIn" class="fa fa-user" style="font-size:7vh; color: rgb(8, 157, 231);">
+                    </i>
+
+                </a>
+            </li>
+
+            <div *ngIf="isLoggedIn" class="container-background row">
+                <div class="nav-item dropdown">
+                    <a class="nav-item nav-link dropdown-toggle user-action">
+                        <img id="homeAvatar" src="assets/images/profil.jpg" class="avatar" alt="Avatar"
+                            style="width: 4vh; height: 4vh;">
+                        <strong style="color: rgb(255, 0, 0); font-size: 2vh;">{{currentUser?.fullName}}</strong>
+                        <button (click)="logOut()"> SignOut</button>
+                    </a>
+                </div>
+            </div>
+            
+
+
+
+        </ul>
+    </div>
+</nav>
+
+
